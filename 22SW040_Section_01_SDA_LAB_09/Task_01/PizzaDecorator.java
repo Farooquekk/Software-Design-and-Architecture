@@ -1,16 +1,18 @@
-// Creating  Cheese topping class
-class Cheese extends PizzaDecorator {
-    public Cheese(Pizza pizza) {
-        super(pizza);
+// Creating abstract Pizza Decorator Class
+abstract class PizzaDecorator implements Pizza {
+    protected Pizza pizza;
+
+    public PizzaDecorator(Pizza pizza) {
+        this.pizza = pizza;
     }
 
     @Override
     public String getDescription() {
-        return pizza.getDescription() + ", Cheese";
+        return pizza.getDescription();
     }
 
     @Override
     public double getCost() {
-        return pizza.getCost() + 50.0;
+        return pizza.getCost();
     }
 }
